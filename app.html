@@ -41,6 +41,8 @@
         // ensure canvas is resized when window changes size
         window.addEventListener('resize', () => app.resizeCanvas());
 
+        pc.app.loader.getHandler("container").crossOrigin = 'anonymous';
+
         const assets = {    
             bpFont: new pc.Asset("Blender-Pro-Font", "font", {
                 url: "assets/fonts/BlenderPro-Medium.json",
