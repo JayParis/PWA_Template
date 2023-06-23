@@ -26,7 +26,21 @@ MainScene.prototype.initialize = function() {
     bolt.render.meshInstances[0].material.setParameter('uTime', 0);
     bolt.render.meshInstances[0].material.setParameter('uDiffuseMap', assets.boltMatCap.resource);
     
-    console.log(bolt.render);
+
+    const topText = new pc.Entity('toptext');
+    topText.addComponent('element', {
+        pivot: new pc.Vec2(0.5, 0.5),
+        anchor: new pc.Vec4(0.5, 1, 0.5, 1),
+        type: pc.ELEMENTTYPE_TEXT,
+        font: assets.bpFont.resource,
+        fontSize: 52,
+        text: "PWA Template",
+        color: [0.01,0.01,0.01],
+        alignment: [0.5,0.5],
+    });
+    uiGroup.addChild(topText);
+    topText.setLocalPosition(0,-105,0);
+
 
     const light = new pc.Entity('light');
     light.addComponent('light');

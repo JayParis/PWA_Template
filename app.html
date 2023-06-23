@@ -63,6 +63,9 @@
             mainScene: new pc.Asset("Main-Scene-Script", "script", {
                 url: "./scripts/main-scene.js",
             }),
+            safeArea: new pc.Asset("Safe-Area-Script", "script", {
+                url: "./scripts/mobile-safe-area.js",
+            }),
         };
         const assetListLoader = new pc.AssetListLoader(
             Object.values(assets),
@@ -74,6 +77,9 @@
             app.root.addComponent('script');
             app.root.script.create("Main-Scene-Script");
 
+            uiGroup.addComponent('script');
+            uiGroup.script.create("mobileSafeArea");
+
             app.start();
 
             document.getElementById('splash').style.display = 'none';
@@ -83,7 +89,7 @@
         camera.addComponent('camera', {
             fov: 60,
             projection: pc.PROJECTION_PERSPECTIVE,
-            clearColor: new pc.Color(0, 1, 1) //0.1, 0.1, 0.01
+            clearColor: new pc.Color(1, 1, 1) //0.1, 0.1, 0.01
         });
         app.root.addChild(camera);
         camera.setPosition(0, 0, 10);
@@ -97,6 +103,15 @@
         });
         app.root.addChild(screen);
         
+        const uiGroup = new pc.Entity('ui_group');
+        uiGroup.addComponent('element', {
+            type: pc.ELEMENTTYPE_GROUP,
+            anchor: new pc.Vec4(0.0, 0.0, 1.0, 1.0),
+            margin: new pc.Vec4(0.0, 0.0, 0.0, 0.0),
+            pivot: new pc.Vec2(0.0, 0.0), 
+        });
+        screen.addChild(uiGroup);
+
         //---
         
     </script>
