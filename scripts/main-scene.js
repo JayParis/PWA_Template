@@ -46,8 +46,12 @@ MainScene.prototype.initialize = function() {
     light.addComponent('light');
     app.root.addChild(light);
     light.setEulerAngles(45, 0, 0);
-
+    
     app.on('update', dt => bolt.rotate(10 * dt, 20 * dt, 10 * dt));
+
+    //Device resize and orientation listeners
+    //window.addEventListener('resize', () => this.resizeMethod());
+    //window.addEventListener('orientationchange', () => this.resizeMethod());
 };
 
 MainScene.prototype.update = function(dt) {

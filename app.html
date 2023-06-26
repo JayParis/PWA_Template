@@ -34,7 +34,6 @@
         var device = pc.Application.getApplication().graphicsDevice;
         device.maxPixelRatio = window.devicePixelRatio;
 
-        // fill the available space at full resolution
         app.setCanvasFillMode(pc.FILLMODE_FILL_WINDOW);
         app.setCanvasResolution(pc.RESOLUTION_AUTO);
 
@@ -72,7 +71,6 @@
             app.assets
         );
         assetListLoader.load(() => {
-            //app.on('update', dt => box.rotate(10 * dt, 20 * dt, 30 * dt));
 
             app.root.addComponent('script');
             app.root.script.create("Main-Scene-Script");
@@ -96,7 +94,7 @@
 
         const screen = new pc.Entity();
         screen.addComponent("screen", {
-            referenceResolution: new pc.Vec2(1280, 720),
+            referenceResolution: new pc.Vec2(1280, 720), //1280, 720
             scaleBlend: 0.5,
             scaleMode: pc.SCALEMODE_BLEND,
             screenSpace: true,
@@ -115,6 +113,6 @@
         //---
         
     </script>
-    <!--<script src='ui-input-library.js'></script>-->
+    <script src='./scripts/ui-input-library.js'></script>
 </body>
 </html>
