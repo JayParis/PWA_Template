@@ -1,8 +1,6 @@
 (function () {
     // iOS positioning is not fun when the keyboard is involved
     // https://blog.opendigerati.com/the-eccentric-ways-of-ios-safari-with-the-keyboard-b5aa3f34228d
-    console.log("___CUSTOM LIBRARY INIT___");
-
     // Needed as we will have edge cases for particlar versions of iOS
     // returns null if not iOS
     function getIosVersion() {
